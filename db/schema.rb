@@ -73,11 +73,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_23_185750) do
   end
 
   create_table "likes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "things_that_we_like_id", null: false
+    t.string "things_that_we_liked_id", null: false
+    t.string "things_that_we_liked_type", null: false
     t.uuid "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["things_that_we_like_id"], name: "index_likes_on_things_that_we_like_id"
+    t.index ["things_that_we_liked_id"], name: "index_likes_on_things_that_we_liked_id"
+    t.index ["things_that_we_liked_type"], name: "index_likes_on_things_that_we_liked_type"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 

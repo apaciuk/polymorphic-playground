@@ -2,16 +2,18 @@
 #
 # Table name: likes
 #
-#  id                     :uuid             not null, primary key
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  things_that_we_like_id :string           not null
-#  user_id                :uuid             not null
+#  id                        :uuid             not null, primary key
+#  things_that_we_liked_type :string           not null
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  things_that_we_liked_id   :string           not null
+#  user_id                   :uuid             not null
 #
 # Indexes
 #
-#  index_likes_on_things_that_we_like_id  (things_that_we_like_id)
-#  index_likes_on_user_id                 (user_id)
+#  index_likes_on_things_that_we_liked_id    (things_that_we_liked_id)
+#  index_likes_on_things_that_we_liked_type  (things_that_we_liked_type)
+#  index_likes_on_user_id                    (user_id)
 #
 # Foreign Keys
 #
